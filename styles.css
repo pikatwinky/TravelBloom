@@ -7,3 +7,48 @@ nav {
     background-color: aquamarine;
     color: white;
 }
+
+
+
+#mainContent{
+    background-image: url("landpage.jpg");
+    background-size: cover;
+    display: flex;
+    height: 100%;
+}
+#mainContent button{
+    width: 80px;
+    height: 30px;
+}
+
+#landpageMessages{
+    flex-direction: column;
+    flex-grow: 3;
+   
+}
+.headers{
+    font-size: 40px;
+    font-weight: 800;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+}
+
+p{
+    border-color: black;
+}
+
+#socials{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#socials img{
+    height: 50px;
+    width: 50px;
+
+}
