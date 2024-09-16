@@ -21,10 +21,15 @@ function printMessage(){
     .then(response=>response.json() )
     .then(data => {
         const result=data[input];
+        console.log(`Tamaño del elemento ${result.length}`);
         if (result){
             for(let i=0; i<noOfRecommendations; i++){
                 if(input==="countries"){
-                    console.log(`Country Recommendations ${i}` );
+                    let countryRecommendation=result[Math.floor(Math.random()*result.length )];
+                    let cityRecommendation=countryRecommendation.cities[Math.floor(Math.random()*countryRecommendation.cities.length )];
+                    console.log(`Country selected ${countryRecommendation.name}` );
+                    console.log(`City selected ${cityRecommendation.name}` );
+
                 }else{
                     console.log(`Non-Country Recommendations ${i}` );
                 }
@@ -37,6 +42,9 @@ function printMessage(){
 
         console.log(Object.keys(data).indexOf(input) );
         
-    });
+    }).catch(error=>{
+        console.error(error);
+        }
+    );
     
 }
