@@ -52,3 +52,14 @@ p{
     width: 50px;
 
 }
+
+#result img{
+    height: 200px;
+    width: 400px;
+
+}
+
+#result{
+    display: flex;
+    flex-direction: column;
+}
