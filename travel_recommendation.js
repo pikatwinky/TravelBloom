@@ -1,5 +1,6 @@
 document.getElementById("searchBtn").addEventListener('click',printMessage);
-document.getElementById("resetBtn").addEventListener('click',printMessage);
+document.getElementById("resetBtn").addEventListener('click',resetRecommendations);
+
 const noOfRecommendations=2;
 
 function printMessage(){
@@ -18,6 +19,8 @@ function printMessage(){
         //input=input.concat("es");
         input=input.replace("y","ies");
         
+    }else if(lastChar!=="s"){
+        input=input.concat("s");
     }
     console.log(input);
     fetch('./travel_recommendation_api.json')
@@ -63,4 +66,10 @@ function printMessage(){
         }
     );
     
+}
+
+function resetRecommendations(){
+    console.log("Evento reset activado");
+    document.getElementById('result').innerHTML='';
+    document.getElementById('searchField').value='';
 }
